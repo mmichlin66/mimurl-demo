@@ -1,0 +1,26 @@
+{
+    "skipTerminateQuickPick": true,
+    "skipSwitchToOutput": false,
+    "skipErrorMessage": true,
+	"commands":
+	[
+        {
+            "text": "mimurl-demo",
+            "tooltip": "build debug mimurl-demo",
+            "color": "white",
+            "commandType": "script",
+            "command": "build-dev",
+            "alignment": "left",
+            "priority": 1
+        },
+        {
+            "text": "mimurl-demo Prod",
+            "tooltip": "build release mimurl-demo",
+            "color": "yellow",
+            "commandType": "script",
+            "command": "build-prod",
+            "alignment": "left",
+            "priority": 1
+        }
+    ]
+}

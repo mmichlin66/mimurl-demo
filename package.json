@@ -1,0 +1,46 @@
+{
+	"name": "mimurl-demo",
+	"version": "0.0.1",
+	"description": "MiM Sample Application",
+	"homepage": "https://mmichlin66.github.io/mimurl/mimurlDemo.html",
+	"repository": "github:mmichlin66/mimurl-demo",
+	"author": {
+		"name": "Michael Michlin",
+		"email": "mmichlin@hotmail.com",
+		"url": "https://mmichlin66.github.io"
+	},
+	"keywords": [
+		"URL",
+		"pattern",
+		"parsing",
+		"matching"
+	],
+	"license": "MIT",
+	"scripts": {
+		"build-dev": "build.bat",
+		"build-prod": "buildProd.bat"
+	},
+	"main": "dist/mimurl-demo.js",
+	"devDependencies": {
+		"awesome-typescript-loader": "^5.2.1",
+		"css-loader": "^2.1.1",
+		"ifdef-loader": "^2.1.1",
+		"ignore-loader": "^0.1.2",
+		"mini-css-extract-plugin": "^0.5.0",
+		"optimize-css-assets-webpack-plugin": "^5.0.3",
+		"source-map-loader": "^0.2.4",
+		"terser-webpack-plugin": "^1.4.1",
+		"ts-loader": "^5.4.5",
+		"typescript": "^3.4.5",
+		"webpack": "^4.31.0",
+		"webpack-cli": "^3.3.5"
+	},
+	"files": [
+		"dist/mimurl-demo.js",
+		"dist/mimurl-demo.css",
+		"index.html"
+	],
+	"dependencies": {
+		"mimurl": "^0.1.0"
+	}
+}
