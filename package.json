@@ -1,6 +1,6 @@
 {
 	"name": "mimurl-demo",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"description": "MiM Sample Application",
 	"homepage": "https://mmichlin66.github.io/mimurl/mimurlDemo.html",
 	"repository": "github:mmichlin66/mimurl-demo",
@@ -41,6 +41,7 @@
 		"index.html"
 	],
 	"dependencies": {
+		"mimbl": "^0.1.1",
 		"mimurl": "^0.1.0"
 	}
 }
