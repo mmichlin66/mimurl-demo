@@ -17,8 +17,8 @@
 	],
 	"license": "MIT",
 	"scripts": {
-		"build-dev": "build.bat",
-		"build-prod": "buildProd.bat"
+		"buildDev": "buildDev.bat",
+		"buildProd": "buildProd.bat"
 	},
 	"main": "dist/mimurl-demo.js",
 	"devDependencies": {

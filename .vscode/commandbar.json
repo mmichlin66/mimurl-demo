@@ -5,11 +5,11 @@
 	"commands":
 	[
         {
-            "text": "mimurl-demo",
+            "text": "mimurl-demo Dev",
             "tooltip": "build debug mimurl-demo",
             "color": "white",
             "commandType": "script",
-            "command": "build-dev",
+            "command": "buildDev",
             "alignment": "left",
             "priority": 1
         },
@@ -18,7 +18,7 @@
             "tooltip": "build release mimurl-demo",
             "color": "yellow",
             "commandType": "script",
-            "command": "build-prod",
+            "command": "buildProd",
             "alignment": "left",
             "priority": 1
         }
