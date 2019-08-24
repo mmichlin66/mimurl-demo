@@ -1,6 +1,4 @@
-﻿import * as mimurl from "mimurl";
-import * as mim from "mimbl";
-// import {Popup, Dialog, DialogButton, MsgBox, MsgBoxButtons, MsgBoxIcon} from "mimcl";
+﻿import * as mim from "mimbl";
 import "./main.css";
 import {MainForm} from "./MainForm";
 
