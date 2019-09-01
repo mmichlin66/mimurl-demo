@@ -41,7 +41,7 @@
 		"index.html"
 	],
 	"dependencies": {
-		"mimbl": "^0.1.1",
-		"mimurl": "^0.1.0"
+		"mimbl": "^0.1.3",
+		"mimurl": "^0.1.1"
 	}
 }

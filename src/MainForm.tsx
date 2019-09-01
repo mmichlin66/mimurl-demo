@@ -71,17 +71,17 @@ export class MainForm extends mim.Component
 		}
 		else if (!this.matchResult.success)
 		{
-			content = <mim.Placeholder>
+			content = <mim.Fragment>
 				<span class="resultIcon" style={{color: "red"}}>{"\u2639"}</span>
 				{this.renderMatchResultErrors( this.matchResult.errors)}
-			</mim.Placeholder>
+			</mim.Fragment>
 		}
 		else
 		{
-			content = <mim.Placeholder>
+			content = <mim.Fragment>
 				<span class="resultIcon" style={{color: "green"}}>{"\u263A"}</span>
 				{this.renderMatchResultFields( this.matchResult.fields)}
-			</mim.Placeholder>
+			</mim.Fragment>
 		}
 
 		return <div class="block">
@@ -145,18 +145,18 @@ export class MainForm extends mim.Component
 			return <span style={{color:"blue"}}>{`${fieldValue}`}</span>;
 		else if (Array.isArray( fieldValue))
 		{
-			return <mim.Placeholder>
+			return <mim.Fragment>
 				<span style={{color:"blue"}}>[</span>
 				{
 					fieldValue.map( (item, index) =>
-						<mim.Placeholder>
+						<mim.Fragment>
 							{index > 0 && <span style={{color:"black"}}>, </span>}
 							{this.renderFieldValue( item)}
-						</mim.Placeholder>
+						</mim.Fragment>
 					)
 				}
 				<span style={{color:"blue"}}>]</span>
-			</mim.Placeholder>
+			</mim.Fragment>
 		}
 	}
 
@@ -184,11 +184,11 @@ export class MainForm extends mim.Component
 		}
 		else
 		{
-			content = <mim.Placeholder>
+			content = <mim.Fragment>
 				{this.renderStringWithRulers( this.pattern, this.patternRuler1, this.patternRuler2)}
 				<hr style={{width: "100%", borderColor: "brown", borderWidth: "0.5px"}}/>
 				{this.renderPatternParsingResult()}
-			</mim.Placeholder>;
+			</mim.Fragment>;
 		}
 
 		return <div class="block">
@@ -350,11 +350,11 @@ export class MainForm extends mim.Component
 		}
 		else
 		{
-			content = <mim.Placeholder>
+			content = <mim.Fragment>
 				{this.renderStringWithRulers( this.url, this.urlRuler1, this.urlRuler2)}
 				<hr style={{width: "100%", borderColor: "brown", borderWidth: "0.5px"}}/>
 				{this.renderUrlParsingResult()}
-			</mim.Placeholder>;
+			</mim.Fragment>;
 		}
 
 		return <div class="block">
