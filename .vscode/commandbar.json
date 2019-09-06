@@ -6,7 +6,6 @@
 	[
         {
             "text": "mimurl-demo Dev",
-            "tooltip": "build debug mimurl-demo",
             "color": "white",
             "commandType": "script",
             "command": "buildDev",
@@ -15,7 +14,6 @@
         },
         {
             "text": "mimurl-demo Prod",
-            "tooltip": "build release mimurl-demo",
             "color": "yellow",
             "commandType": "script",
             "command": "buildProd",
