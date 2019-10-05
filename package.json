@@ -1,6 +1,6 @@
 {
 	"name": "mimurl-demo",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "MiM Sample Application",
 	"homepage": "https://mmichlin66.github.io/mimurl/mimurlDemo.html",
 	"repository": "github:mmichlin66/mimurl-demo",
@@ -20,7 +20,7 @@
 		"buildDev": "buildDev.bat",
 		"buildProd": "buildProd.bat"
 	},
-	"main": "dist/mimurl-demo.js",
+	"main": "lib/mimurl-demo.js",
 	"devDependencies": {
 		"awesome-typescript-loader": "^5.2.1",
 		"css-loader": "^2.1.1",
@@ -36,12 +36,12 @@
 		"webpack-cli": "^3.3.5"
 	},
 	"files": [
-		"dist/mimurl-demo.js",
-		"dist/mimurl-demo.css",
+		"lib/mimurl-demo.js",
+		"lib/mimurl-demo.css",
 		"index.html"
 	],
 	"dependencies": {
-		"mimbl": "^0.1.3",
-		"mimurl": "^0.1.1"
+		"mimbl": "^0.1.12",
+		"mimurl": "^0.1.2"
 	}
 }

@@ -32,7 +32,7 @@ module.exports =
     output:
     {
         filename: outputFilename,
-        path: __dirname + "/dist",
+        path: __dirname + "/lib",
 		// library: "mimurl-demo",
 		libraryTarget: 'umd',
 		globalObject: 'this'

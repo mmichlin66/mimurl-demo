@@ -427,17 +427,17 @@ export class MainForm extends mim.Component
 		</div>
 	}
 
-	private onPatternChange = (e: MouseEvent): void =>
+	private onPatternChange(e: MouseEvent): void
 	{
 		this.pattern = (e.target as HTMLInputElement).value.trim();
 		this.update();
-	};
+	}
 
-	private onUrlChange = (e: MouseEvent): void =>
+	private onUrlChange(e: MouseEvent): void
 	{
 		this.url = (e.target as HTMLInputElement).value.trim();
 		this.update();
-	};
+	}
 
 	/**
 	 * Parses the URL pattern and the actual URL (if exist) and invokes matching. This method
