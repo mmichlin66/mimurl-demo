@@ -1,5 +1,6 @@
 ﻿import * as mim from "mimbl";
 import * as mimurl from "mimurl";
+import {Color_StyleType} from "mimcss";
 import "./MainForm.css";
 
 
@@ -203,7 +204,7 @@ export class MainForm extends mim.Component
 	 */	
 	private renderPatternParsingResult(): any
 	{
-		let iconColor = this.patternParsingError ? "red" : "green";
+		let iconColor: Color_StyleType = this.patternParsingError ? "red" : "green";
 		let iconCode = this.patternParsingError ? "\u2639" : "\u263A";
 		let result = this.patternParsingError
 			? <span style={{verticalAlign:"middle", paddingLeft:"8px"}}>{this.patternParsingError.message}</span>
@@ -368,7 +369,7 @@ export class MainForm extends mim.Component
 	 */	
 	private renderUrlParsingResult(): any
 	{
-		let iconColor = this.urlParsingError ? "red" : "green";
+		let iconColor: Color_StyleType = this.urlParsingError ? "red" : "green";
 		let iconCode = this.urlParsingError ? "\u2639" : "\u263A";
 		let result = this.urlParsingError
 			? <span style={{verticalAlign:"middle", paddingLeft:"8px"}}>{this.urlParsingError.message}</span>
