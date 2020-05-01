@@ -1,7 +1,7 @@
 ﻿import * as mim from "mimbl";
 import * as mimurl from "mimurl";
-import {Color_StyleType} from "mimcss";
-import "./MainForm.css";
+import {CssColor} from "mimcss";
+import {styles} from "./styles";
 
 
 
@@ -44,7 +44,7 @@ export class MainForm extends mim.Component
 	 */
 	private renderForm(): any
 	{
-		return <table class="layout">
+		return <table class={styles.layout.name}>
 			<colgroup>
 				<col style={{textAlign:"right", verticalAlign:"center"}}/>
 				<col style={{textAlign:"left", verticalAlign:"middle", width: "100%"}}/>
@@ -68,26 +68,26 @@ export class MainForm extends mim.Component
 		let content: any;
 		if (!this.parsedPattern || !this.parsedUrl)
 		{
-			content = <p class="descr">When you type a valid pattern and URL, this area will show the matching results</p>;
+			content = <p class={styles.descr.name}>When you type a valid pattern and URL, this area will show the matching results</p>;
 		}
 		else if (!this.matchResult.success)
 		{
 			content = <mim.Fragment>
-				<span class="resultIcon" style={{color: "red"}}>{"\u2639"}</span>
+				<span class={styles.resultIcon.name} style={{color: "red"}}>{"\u2639"}</span>
 				{this.renderMatchResultErrors( this.matchResult.errors)}
 			</mim.Fragment>
 		}
 		else
 		{
 			content = <mim.Fragment>
-				<span class="resultIcon" style={{color: "green"}}>{"\u263A"}</span>
+				<span class={styles.resultIcon.name} style={{color: "green"}}>{"\u263A"}</span>
 				{this.renderMatchResultFields( this.matchResult.fields)}
 			</mim.Fragment>
 		}
 
-		return <div class="block">
+		return <div class={styles.block.name}>
 			<h3>Match Result</h3>
-			<div class="matchArea">{content}</div>
+			<div class={styles.matchArea.name}>{content}</div>
 		</div>
 	}
 
@@ -114,7 +114,7 @@ export class MainForm extends mim.Component
 
 		if (fieldRows.length > 0)
 		{
-			return <table class="data">
+			return <table class={styles.data.name}>
 				<tr><th>Field</th><th>Value</th></tr>
 				{fieldRows}
 			</table>
@@ -167,7 +167,7 @@ export class MainForm extends mim.Component
 	 */
 	private renderMatchResultErrors( errors: string[]): any
 	{
-		return <div class="matchResultErrors">
+		return <div class={styles.matchResultErrors.name}>
 			{errors.map( (error: string) => <span>{error}</span>)}
 		</div>;
 	}
@@ -181,7 +181,7 @@ export class MainForm extends mim.Component
 		let content: any;
 		if (!this.pattern || this.pattern.length === 0)
 		{
-			content = <p class="descr">When you type a pattern, this area will show how it is parsed</p>;
+			content = <p class={styles.descr.name}>When you type a pattern, this area will show how it is parsed</p>;
 		}
 		else
 		{
@@ -192,9 +192,9 @@ export class MainForm extends mim.Component
 			</mim.Fragment>;
 		}
 
-		return <div class="block">
+		return <div class={styles.block.name}>
 			<h3>URL Pattern</h3>
-			<div class="parsingArea">{content}</div>
+			<div class={styles.parsingArea.name}>{content}</div>
 		</div>;
 	}
 
@@ -204,14 +204,14 @@ export class MainForm extends mim.Component
 	 */	
 	private renderPatternParsingResult(): any
 	{
-		let iconColor: Color_StyleType = this.patternParsingError ? "red" : "green";
+		let iconColor: CssColor = this.patternParsingError ? "red" : "green";
 		let iconCode = this.patternParsingError ? "\u2639" : "\u263A";
 		let result = this.patternParsingError
 			? <span style={{verticalAlign:"middle", paddingLeft:"8px"}}>{this.patternParsingError.message}</span>
 			: this.renderParsedPattern();
 
-		return <div class="parsingResult">
-			<span class="resultIcon" style={{color: iconColor}}>{iconCode}</span>
+		return <div class={styles.parsingResult.name}>
+			<span class={styles.resultIcon.name} style={{color: iconColor}}>{iconCode}</span>
 			{result}
 		</div>
 	}
@@ -221,7 +221,7 @@ export class MainForm extends mim.Component
 	 */
 	private renderParsedPattern(): any
 	{
-		return <table class="data">
+		return <table class={styles.data.name}>
 			<tr><th>Part</th><th>Segment</th><th>Location</th><th>RegExp</th><th>Fields</th></tr>
 			{this.parsedPattern.protocol && this.renderParsedPatternSegments( "Protocol", this.parsedPattern.protocol.getSegments())}
 			{this.parsedPattern.hostname && this.renderParsedPatternSegments( "Hostname", this.parsedPattern.hostname.getSegments())}
@@ -334,7 +334,7 @@ export class MainForm extends mim.Component
 			</span>);
 		}
 
-		return <div class="parsedSegmentFields">
+		return <div class={styles.parsedSegmentFields.name}>
 			{fieldSpans}
 		</div>;
 	}
@@ -347,7 +347,7 @@ export class MainForm extends mim.Component
 		let content: any;
 		if (!this.url || this.url.length === 0)
 		{
-			content = <p class="descr">When you type a URL, this area will show how it is parsed</p>;
+			content = <p class={styles.descr.name}>When you type a URL, this area will show how it is parsed</p>;
 		}
 		else
 		{
@@ -358,9 +358,9 @@ export class MainForm extends mim.Component
 			</mim.Fragment>;
 		}
 
-		return <div class="block">
+		return <div class={styles.block.name}>
 			<h3>Actual URL</h3>
-			<div class="parsingArea">{content}</div>
+			<div class={styles.parsingArea.name}>{content}</div>
 		</div>;
 	}
 
@@ -369,14 +369,14 @@ export class MainForm extends mim.Component
 	 */	
 	private renderUrlParsingResult(): any
 	{
-		let iconColor: Color_StyleType = this.urlParsingError ? "red" : "green";
+		let iconColor: CssColor = this.urlParsingError ? "red" : "green";
 		let iconCode = this.urlParsingError ? "\u2639" : "\u263A";
 		let result = this.urlParsingError
 			? <span style={{verticalAlign:"middle", paddingLeft:"8px"}}>{this.urlParsingError.message}</span>
 			: this.renderParsedUrl();
 
-		return <div class="parsingResult">
-			<span class="resultIcon" style={{color: iconColor}}>{iconCode}</span>
+		return <div class={styles.parsingResult.name}>
+			<span class={styles.resultIcon.name} style={{color: iconColor}}>{iconCode}</span>
 			{result}
 		</div>
 	}
@@ -386,7 +386,7 @@ export class MainForm extends mim.Component
 	 */
 	private renderParsedUrl(): any
 	{
-		return <table class="data">
+		return <table class={styles.data.name}>
 			<tr><th>Part</th><th>Content</th></tr>
 			{this.parsedUrl.protocol && <tr><td>Protocol</td><td>{this.parsedUrl.protocol}</td></tr>}
 			{this.parsedUrl.hostname && <tr><td>Hostname</td><td>{this.parsedUrl.hostname.join(".")}</td></tr>}
@@ -423,8 +423,8 @@ export class MainForm extends mim.Component
 	private renderStringWithRulers( s: string, ruler1: string, ruler2:string): any
 	{
 		return <div>
-			<pre class="rulers">{ruler1}<br/>{ruler2}</pre>
-			<pre class="string">{s}</pre>
+			<pre class={styles.rulers.name}>{ruler1}<br/>{ruler2}</pre>
+			<pre class={styles.string.name}>{s}</pre>
 		</div>
 	}
 

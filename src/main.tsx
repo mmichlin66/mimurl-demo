@@ -1,5 +1,4 @@
 ﻿import * as mim from "mimbl";
-import "./main.css";
 import {MainForm} from "./MainForm";
 
 

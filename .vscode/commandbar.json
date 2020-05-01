@@ -5,18 +5,10 @@
 	"commands":
 	[
         {
-            "text": "mimurl-demo Dev",
+            "text": "mimurl-demo build",
             "color": "white",
-            "commandType": "exec",
-            "command": "buildDev.bat",
-            "alignment": "left",
-            "priority": 1
-        },
-        {
-            "text": "mimurl-demo Prod",
-            "color": "yellow",
-            "commandType": "exec",
-            "command": "buildProd.bat",
+            "commandType": "script",
+            "command": "build",
             "alignment": "left",
             "priority": 1
         }
