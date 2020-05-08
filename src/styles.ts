@@ -29,15 +29,25 @@ class Styles extends css.StyleDefinition
 
 	table = css.$style( "table", {
 		"&": [
-			[css.$selector( "&{0}", this.layout), { border: "none", width: "100%" }],
-			[css.$selector( "&{0} tr", this.layout), { border: "none" }],
-			[css.$selector( "&{0} tr td", this.layout), { border: "none", padding: 4 }],
-			[css.$selector( "&{0}", this.data), { border: [1, "solid", "grey"], borderCollapse: "collapse" }],
-			[css.$selector( "&{0} th, &{0} td", this.data), {
-				border: "1px solid grey",
-				textAlign: "left",
-				verticalAlign: "center",
-				padding: 4
+			[this.layout, {	// table.layout
+				border: "none", width: "100%",
+				"& ": [["tr", {	// table.layout tr
+					border: "none",
+					"& ": [["td", { border: "none", padding: 4 }]]	// table.layout tr td
+				}]]
+			}],
+
+			[this.data, {	// table.data
+				border: [1, "solid", "grey"], borderCollapse: "collapse",
+				"&": [
+					["& th, & td", {	// table.data th, table.data td
+						border: "1px solid grey",
+						textAlign: "left",
+						verticalAlign: "center",
+						padding: 4
+					}],
+
+				]
 			}],
 		]
 	})
@@ -48,7 +58,7 @@ class Styles extends css.StyleDefinition
 
 	p = css.$style( "p", {
 		"&": [
-			[css.$selector( "&{0}", this.descr), { marginLeft: "1em", marginRight: "1em" }],
+			[this.descr, { marginLeft: "1em", marginRight: "1em" }],
 		]
 	})
 
