@@ -3,7 +3,7 @@
 
 
 /// #if !DEBUG
-css.$enableShortNames( true);
+css.enableShortNames( true);
 /// #endif
 
 
