@@ -116,4 +116,4 @@ class Styles extends css.StyleDefinition
 
 
 
-export let styles = css.$activate( Styles);
+export let styles = css.activate( Styles);
