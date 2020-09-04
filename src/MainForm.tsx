@@ -1,6 +1,6 @@
 ﻿import * as mim from "mimbl";
 import * as mimurl from "mimurl";
-import {CssColor} from "mimcss";
+import * as css from "mimcss";
 import {styles} from "./styles";
 
 
@@ -25,7 +25,7 @@ export class MainForm extends mim.Component
 	 */
 	public render(): any
 	{
-		return <div style={{margin:"12px"}}>
+		return <div style={{margin:12}}>
 			<h2>URL Parsing and Matching</h2>
 
 			<p>This page demonstrates the capabilities of the <b>mimurl</b> library
@@ -46,7 +46,7 @@ export class MainForm extends mim.Component
 	{
 		return <table class={styles.layout.name}>
 			<colgroup>
-				<col style={{textAlign:"right", verticalAlign:"center"}}/>
+				<col style={{textAlign:"right", verticalAlign:"middle"}}/>
 				<col style={{textAlign:"left", verticalAlign:"middle", width: "100%"}}/>
 			</colgroup>
 			<tr>
@@ -93,7 +93,7 @@ export class MainForm extends mim.Component
 
 	/**
 	 * Renders information about field values obtained during matching.
-	 * @param fields 
+	 * @param fields
 	 * @returns array of table rows - one row per field.
 	 */
 	private renderMatchResultFields( fields: mimurl.FieldBag): any
@@ -125,7 +125,7 @@ export class MainForm extends mim.Component
 
 	/**
 	 * Renders field value(s) according to its type and with appropriate styles.
-	 * @param fieldValue 
+	 * @param fieldValue
 	 */
 	private renderFieldValue( fieldValue: mimurl.FieldValueType): any
 	{
@@ -163,7 +163,7 @@ export class MainForm extends mim.Component
 
 	/**
 	 * Renders one or more errors received during the matching.
-	 * @param errors 
+	 * @param errors
 	 */
 	private renderMatchResultErrors( errors: string[]): any
 	{
@@ -172,7 +172,7 @@ export class MainForm extends mim.Component
 		</div>;
 	}
 
-	
+
 	/**
 	 * Renders the area with the information about the parsed URL pattern
 	 */
@@ -187,7 +187,7 @@ export class MainForm extends mim.Component
 		{
 			content = <mim.Fragment>
 				{this.renderStringWithRulers( this.pattern, this.patternRuler1, this.patternRuler2)}
-				<hr style={{width: "100%", borderColor: "brown", borderWidth: "0.5px"}}/>
+				<hr style={{width: "100%", borderColor: "brown", borderWidth: css.px(0.5)}}/>
 				{this.renderPatternParsingResult()}
 			</mim.Fragment>;
 		}
@@ -201,13 +201,13 @@ export class MainForm extends mim.Component
 	/**
 	 * Renders the URL pattern parsing result: either the successflly parsed pattern or the
 	 * parsing error.
-	 */	
+	 */
 	private renderPatternParsingResult(): any
 	{
-		let iconColor: CssColor = this.patternParsingError ? "red" : "green";
+		let iconColor: css.CssColor = this.patternParsingError ? "red" : "green";
 		let iconCode = this.patternParsingError ? "\u2639" : "\u263A";
 		let result = this.patternParsingError
-			? <span style={{verticalAlign:"middle", paddingLeft:"8px"}}>{this.patternParsingError.message}</span>
+			? <span style={{verticalAlign:"middle", paddingLeft:8}}>{this.patternParsingError.message}</span>
 			: this.renderParsedPattern();
 
 		return <div class={styles.parsingResult.name}>
@@ -234,8 +234,8 @@ export class MainForm extends mim.Component
 
 	/**
 	 * Renders information about one or more segements from the given named URL part of the URL pattern
-	 * @param urlPartName 
-	 * @param segments 
+	 * @param urlPartName
+	 * @param segments
 	 * @returns array of table rows - one per each segment.
 	 */
 	private renderParsedPatternSegments( urlPartName: string, segments: mimurl.IParsedSegment[]): any
@@ -269,7 +269,7 @@ export class MainForm extends mim.Component
 
 	/**
 	 * Renders information about query string parameters parsed from the URL pattern
-	 * @param query 
+	 * @param query
 	 * @returns array of rows - one per query string  parameter
 	 */
 	private renderParsedPatternQuery( query: mimurl.IParsedQueryString): any
@@ -295,7 +295,7 @@ export class MainForm extends mim.Component
 
 	/**
 	 * Returns string representation of the given location within the parsed string.
-	 * @param location 
+	 * @param location
 	 * @returns String representation of the given location in the format "start - end (length)"
 	 */
 	private getLocationString( location: mimurl.ParsedLocation): any
@@ -305,7 +305,7 @@ export class MainForm extends mim.Component
 
 	/**
 	 * Renders information about fields in the given segments.
-	 * @param segment 
+	 * @param segment
 	 * @returns <div> element representing a vertical box with information about each field
 	 * on a separate row.
 	 */
@@ -353,7 +353,7 @@ export class MainForm extends mim.Component
 		{
 			content = <mim.Fragment>
 				{this.renderStringWithRulers( this.url, this.urlRuler1, this.urlRuler2)}
-				<hr style={{width: "100%", borderColor: "brown", borderWidth: "0.5px"}}/>
+				<hr style={{width: "100%", borderColor: "brown", borderWidth: css.px(0.5)}}/>
 				{this.renderUrlParsingResult()}
 			</mim.Fragment>;
 		}
@@ -366,13 +366,13 @@ export class MainForm extends mim.Component
 
 	/**
 	 * Renders the actual URL parsing result: either the successflly parsed URL or the parsing error.
-	 */	
+	 */
 	private renderUrlParsingResult(): any
 	{
-		let iconColor: CssColor = this.urlParsingError ? "red" : "green";
+		let iconColor: css.CssColor = this.urlParsingError ? "red" : "green";
 		let iconCode = this.urlParsingError ? "\u2639" : "\u263A";
 		let result = this.urlParsingError
-			? <span style={{verticalAlign:"middle", paddingLeft:"8px"}}>{this.urlParsingError.message}</span>
+			? <span style={{verticalAlign:"middle", paddingLeft:8}}>{this.urlParsingError.message}</span>
 			: this.renderParsedUrl();
 
 		return <div class={styles.parsingResult.name}>
@@ -399,7 +399,7 @@ export class MainForm extends mim.Component
 
 	/**
 	 * Renders information about query string parameters parsed from the URL
-	 * @param query 
+	 * @param query
 	 * @returns array of rows - one per query string  parameter
 	 */
 	private renderParsedActualQuery( query: { [P: string]: string[] }): any

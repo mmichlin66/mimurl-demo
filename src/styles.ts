@@ -41,9 +41,9 @@ class Styles extends css.StyleDefinition
 				border: [1, "solid", "grey"], borderCollapse: "collapse",
 				"&": [
 					["& th, & td", {	// table.data th, table.data td
-						border: "1px solid grey",
+						border: [1, "solid", "grey"],
 						textAlign: "left",
-						verticalAlign: "center",
+						verticalAlign: "middle",
 						padding: 4
 					}],
 
@@ -58,12 +58,12 @@ class Styles extends css.StyleDefinition
 
 	p = css.$style( "p", {
 		"&": [
-			[this.descr, { marginLeft: "1em", marginRight: "1em" }],
+			[this.descr, { marginLeft: css.em(1), marginRight: css.em(1) }],
 		]
 	})
 
 	matchArea = css.$class({
-		border: "1px solid brown",
+		border: [1, "solid", "brown"],
 		padding: 2,
 		backgroundColor: "beige",
 		overflowX: "auto",
@@ -76,7 +76,7 @@ class Styles extends css.StyleDefinition
 		textAlign: "center",
 		verticalAlign: "middle",
 	})
-	
+
 	matchResultErrors = css.$class({
 		padding: 4,
 		display: "flex",
@@ -87,31 +87,31 @@ class Styles extends css.StyleDefinition
 		color: "blue",
 		margin: 0,
 	})
-	
+
 	string = css.$class({
 		color: "green",
 	})
-	
+
 	parsingArea = css.$class({
-		border: "1px solid brown",
+		border: [1, "solid", "brown"],
 		padding: 2,
 		backgroundColor: "beige",
 		overflowX: "auto",
 		display: "flex",
 		flexDirection: "column",
 	})
-	
+
 	parsingResult = css.$class({
 		display: "flex",
 		flexDirection: "row",
 	})
-	
+
 	parsedSegmentFields = css.$class({
 		display: "flex",
 		flexDirection: "column",
 	})
-	
-	
+
+
 }
 
 
