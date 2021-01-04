@@ -72,17 +72,17 @@ export class MainForm extends mim.Component
 		}
 		else if (!this.matchResult.success)
 		{
-			content = <mim.Fragment>
+			content = <>
 				<span class={styles.resultIcon.name} style={{color: "red"}}>{"\u2639"}</span>
 				{this.renderMatchResultErrors( this.matchResult.errors)}
-			</mim.Fragment>
+			</>
 		}
 		else
 		{
-			content = <mim.Fragment>
+			content = <>
 				<span class={styles.resultIcon.name} style={{color: "green"}}>{"\u263A"}</span>
 				{this.renderMatchResultFields( this.matchResult.fields)}
-			</mim.Fragment>
+			</>
 		}
 
 		return <div class={styles.block.name}>
@@ -146,18 +146,18 @@ export class MainForm extends mim.Component
 			return <span style={{color:"blue"}}>{`${fieldValue}`}</span>;
 		else if (Array.isArray( fieldValue))
 		{
-			return <mim.Fragment>
+			return <>
 				<span style={{color:"blue"}}>[</span>
 				{
 					fieldValue.map( (item, index) =>
-						<mim.Fragment>
+						<>
 							{index > 0 && <span style={{color:"black"}}>, </span>}
 							{this.renderFieldValue( item)}
-						</mim.Fragment>
+						</>
 					)
 				}
 				<span style={{color:"blue"}}>]</span>
-			</mim.Fragment>
+			</>
 		}
 	}
 
@@ -185,11 +185,11 @@ export class MainForm extends mim.Component
 		}
 		else
 		{
-			content = <mim.Fragment>
+			content = <>
 				{this.renderStringWithRulers( this.pattern, this.patternRuler1, this.patternRuler2)}
 				<hr style={{width: "100%", borderColor: "brown", borderWidth: css.px(0.5)}}/>
 				{this.renderPatternParsingResult()}
-			</mim.Fragment>;
+			</>;
 		}
 
 		return <div class={styles.block.name}>
@@ -351,11 +351,11 @@ export class MainForm extends mim.Component
 		}
 		else
 		{
-			content = <mim.Fragment>
+			content = <>
 				{this.renderStringWithRulers( this.url, this.urlRuler1, this.urlRuler2)}
 				<hr style={{width: "100%", borderColor: "brown", borderWidth: css.px(0.5)}}/>
 				{this.renderUrlParsingResult()}
-			</mim.Fragment>;
+			</>;
 		}
 
 		return <div class={styles.block.name}>
