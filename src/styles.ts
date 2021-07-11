@@ -2,12 +2,6 @@
 
 
 
-/// #if !DEBUG
-css.enableShortNames( true);
-/// #endif
-
-
-
 class Styles extends css.StyleDefinition
 {
 	init = [
