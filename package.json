@@ -34,8 +34,8 @@
 		"index.html"
 	],
 	"dependencies": {
-		"mimbl": "^0.5.2",
-		"mimcss": "^0.8.1",
+		"mimbl": "^0.6.6",
+		"mimcss": "^0.9.1",
 		"mimurl": "^0.1.5"
 	}
 }
