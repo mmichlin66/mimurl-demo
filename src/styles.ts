@@ -5,23 +5,23 @@
 class Styles extends css.StyleDefinition
 {
 	init = [
-		css.$style( "*", {
+		this.$style( "*", {
 			fontFamily: "Verdana, Geneva, Tahoma, sans-serif",
 			fontSize: 12,
 			boxSizing: "border-box",
 		}),
 
-		css.$style( "html", { height: "100%" }),
+		this.$style( "html", { height: "100%" }),
 
-		css.$style( "body", { height: "100%", margin: 0 }),
+		this.$style( "body", { height: "100%", margin: 0 }),
 
-		css.$style( "pre", { fontFamily: "'Courier New', Courier, monospace", margin: 0 }),
+		this.$style( "pre", { fontFamily: "'Courier New', Courier, monospace", margin: 0 }),
 	]
 
-	layout = css.$class({})
-	data = css.$class({})
+	layout = this.$class({})
+	data = this.$class({})
 
-	table = css.$style( "table", {
+	table = this.$style( "table", {
 		"&": [
 			[this.layout, {	// table.layout
 				border: "none", width: "100%",
@@ -46,17 +46,17 @@ class Styles extends css.StyleDefinition
 		]
 	})
 
-	block = css.$class({ marginTop: 8 })
+	block = this.$class({ marginTop: 8 })
 
-	descr = css.$class({})
+	descr = this.$class({})
 
-	p = css.$style( "p", {
+	p = this.$style( "p", {
 		"&": [
 			[this.descr, { marginLeft: css.em(1), marginRight: css.em(1) }],
 		]
 	})
 
-	matchArea = css.$class({
+	matchArea = this.$class({
 		border: [1, "solid", "brown"],
 		padding: 2,
 		backgroundColor: "beige",
@@ -65,28 +65,28 @@ class Styles extends css.StyleDefinition
 		flexDirection: "row",
 	})
 
-	resultIcon = css.$class({
+	resultIcon = this.$class({
 		fontSize: 48,
 		textAlign: "center",
 		verticalAlign: "middle",
 	})
 
-	matchResultErrors = css.$class({
+	matchResultErrors = this.$class({
 		padding: 4,
 		display: "flex",
 		flexDirection: "column"
 	})
 
-	rulers = css.$class({
+	rulers = this.$class({
 		color: "blue",
 		margin: 0,
 	})
 
-	string = css.$class({
+	string = this.$class({
 		color: "green",
 	})
 
-	parsingArea = css.$class({
+	parsingArea = this.$class({
 		border: [1, "solid", "brown"],
 		padding: 2,
 		backgroundColor: "beige",
@@ -95,12 +95,12 @@ class Styles extends css.StyleDefinition
 		flexDirection: "column",
 	})
 
-	parsingResult = css.$class({
+	parsingResult = this.$class({
 		display: "flex",
 		flexDirection: "row",
 	})
 
-	parsedSegmentFields = css.$class({
+	parsedSegmentFields = this.$class({
 		display: "flex",
 		flexDirection: "column",
 	})
