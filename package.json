@@ -1,7 +1,7 @@
 {
 	"name": "mimurl-demo",
 	"private": true,
-	"version": "0.1.11",
+	"version": "0.1.12",
 	"description": "MiM Sample Application",
 	"homepage": "https://mmichlin66.github.io/mimurl/playground.html",
 	"repository": "github:mmichlin66/mimurl-demo",
@@ -34,8 +34,8 @@
 		"index.html"
 	],
 	"dependencies": {
-		"mimbl": "^0.7.2",
-		"mimcss": "^0.11.9",
+		"mimbl": "^0.8.1",
+		"mimcss": "^0.11.12",
 		"mimurl": "^0.1.6"
 	}
 }
